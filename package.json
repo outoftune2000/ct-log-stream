@@ -1,0 +1,59 @@
+{
+  "name": "ct-log-stream",
+  "version": "0.1.0",
+  "description": "Stream Certificate Transparency log entries from Google's CT log list — fetch, filter, parse, and tail CT logs in real-time.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./parser": {
+      "import": "./dist/parser.js",
+      "types": "./dist/parser.d.ts"
+    },
+    "./log-list": {
+      "import": "./dist/logList.js",
+      "types": "./dist/logList.d.ts"
+    },
+    "./stream": {
+      "import": "./dist/stream.js",
+      "types": "./dist/stream.d.ts"
+    }
+  },
+  "files": [
+    "dist",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@peculiar/x509": "^1.12.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "certificate-transparency",
+    "ct-log",
+    "ct",
+    "certificate",
+    "stream",
+    "tls",
+    "ssl"
+  ]
+}
